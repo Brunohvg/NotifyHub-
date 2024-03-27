@@ -24,6 +24,7 @@ class NuvemShop:
             response.raise_for_status()  # Levanta HTTPError para respostas ruins
 
             date = response.json()
+            print(date)
             return date
 
         except RequestException as e:
