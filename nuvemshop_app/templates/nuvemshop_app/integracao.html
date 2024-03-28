@@ -7,7 +7,11 @@
   <div class="card">
     <div class="card-body">
       <h4>Central de Integrações</h4>
-      {{ lj_integrada.nome }}
+     
+      {% for nova_loja in nova_loja %}
+        {{nova_loja.email}}
+      {% endfor %}
+      {{loja_existente}}
     </div>
   </div>
   <div class="row p-3">

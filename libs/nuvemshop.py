@@ -47,6 +47,7 @@ class NuvemShop:
                     "whatsapp_phone_number": data["whatsapp_phone_number"],
                     "contact_email": data["contact_email"],
                     "email": data["email"],
+                    "id": data["id"],
                 }
                 return store_data
 

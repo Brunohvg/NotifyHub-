@@ -3,18 +3,21 @@ from django.db import models
 # Create your models here.
 
 
-class Integracao(models.Model):
-    nome_loja = models.CharField(max_length=100)
-    telefone_loja = models.CharField(max_length=20)
-    cnpj_cpf_loja = models.CharField(max_length=14)
+class LojaIntegrada(models.Model):
+    id = models.CharField(max_length=20, primary_key=True) # ID único da Loja Integrada
+    nome = models.CharField(max_length=100)
+    whatsapp_phone_number = models.CharField(max_length=20)
+    contact_email = models.EmailField()
+    email = models.EmailField()
+    doc = models.CharField(max_length=14)
     autorization_token = models.CharField(max_length=200)
 
     def __str__(self) -> str:
-        return self.autorization_token
+        return self.nome
 
 
 
-class Cliente(models.Model):
+"""class Cliente(models.Model):
     cpf_cnpj = models.CharField(max_length=14)
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20)
@@ -33,3 +36,4 @@ class Venda(models.Model):
 
     def __str__(self) -> str:
         return self.cliente.nome
+"""
