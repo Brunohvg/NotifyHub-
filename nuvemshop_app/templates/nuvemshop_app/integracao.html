@@ -1,17 +1,10 @@
 {% extends 'pages/index.html' %}
 
+{% block TituloConteudoFluido %}
+  <h5 class="card-title fw-semibold mb-4">Central de Integrações</h5>
+{% endblock %}
 
 {% block ConteudoFluido %}
-  <div class="card">
-    <div class="card-body">
-      <h4>Central de Integrações</h4>
-     
-      {% for nova_loja in nova_loja %}
-        {{nova_loja.email}}
-      {% endfor %}
-      {{loja_existente}}
-    </div>
-  </div>
   <div class="row p-3">
     {% include 'nuvemshop_app/blocos/card-nuvemshop.html' %}
     {% include 'nuvemshop_app/blocos/card-sgpweb.html' %}

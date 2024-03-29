@@ -11,14 +11,9 @@ PARAMETRO_CODE = "code"
 
 
 def integracao(request):
-    """
-    Autentica a loja NuvemShop e cria uma nova instância de integração ou atualiza uma existente.
-    """
     # Verifique se o parâmetro 'code' existe na URL
     code = request.GET.get(PARAMETRO_CODE, None)
     lojas = LojaIntegrada.objects.all()
-
-    print(lojas)
     if code is not None:
         return autorizar(request, code=code)  # Chamando a função autorizar
     else:

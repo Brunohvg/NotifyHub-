@@ -6,7 +6,6 @@
     },
     "files.associations": {
         "**/views/**/*.html": "django-html",
-        "*.tpl": "django-html",
     },
     "emmet.includeLanguages": {
         "django-html": "html",

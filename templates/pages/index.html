@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spike Free</title>
+    <title>CloudStore</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/logos/favicon.png' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}" />
   </head>
@@ -35,14 +35,16 @@
                   <span class="hide-menu ms-2 ps-1">Dashboard</span>
                 </a>
               </li>
+              <!-- Main wrapper
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
                 <span class="hide-menu">UI Componenst</span>
               </li>
+               -->
               <li class="sidebar-item">
-                <a class="sidebar-link sidebar-link warning-hover-bg" href="./ui-buttons.html" aria-expanded="false">
+                <a class="sidebar-link sidebar-link warning-hover-bg" href="{% url "nuvemshop_app:integracao" %}" aria-expanded="false">
                   <span class="aside-icon p-2 bg-light-warning rounded-3"><i class="ti ti-article fs-7 text-warning"></i></span>
-                  <span class="hide-menu ms-2 ps-1">Buttons</span>
+                  <span class="hide-menu ms-2 ps-1">Notificações</span>
                 </a>
               </li>
               <li class="sidebar-item">
@@ -64,9 +66,9 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link sidebar-link indigo-hover-bg" href="./ui-typography.html" aria-expanded="false">
-                  <span class="aside-icon p-2 bg-light-indigo rounded-3"><i class="ti ti-typography fs-7 text-indigo"></i></span>
-                  <span class="hide-menu ms-2 ps-1">Typography</span>
+                <a class="sidebar-link sidebar-link indigo-hover-bg" href="{% url "nuvemshop_app:integracao" %}" aria-expanded="false">
+                  <span class="aside-icon p-2 bg-light-indigo rounded-3"><i class="ti ti-puzzle fs-7 text-indigo"></i></span>
+                  <span class="hide-menu ms-2 ps-1">Integração</span>
                 </a>
               </li>
               <li class="nav-small-cap">
@@ -201,10 +203,11 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Sample Page</h5>
+              {% block TituloConteudoFluido %}
+                <h5 class="card-title fw-semibold mb-4">Sample Page</h5>
+              {% endblock %}
               {% block ConteudoFluido %}
                 <p class="mb-0">This is a sample page</p>
-                
               {% endblock %}
             </div>
           </div>
@@ -216,5 +219,12 @@
     <script src="{% static 'assets/js/sidebarmenu.js' %}"></script>
     <script src="{% static 'assets/js/app.min.js' %}"></script>
     <script src="{% static 'assets/libs/simplebar/dist/simplebar.js' %}"></script>
+    <script src="{% static 'assets/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard.js' %}"></script>
   </body>
 </html>
+
+
+
+
+
