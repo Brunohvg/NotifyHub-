@@ -2,12 +2,14 @@
     "editor.formatOnSave": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
     },
     "files.associations": {
-        "**/templates/**/*.html": "django-html"
+        "**/views/**/*.html": "django-html",
+        "*.tpl": "django-html",
     },
     "emmet.includeLanguages": {
-        "django-html": "html"
-    }
+        "django-html": "html",
+    },
+    "files.autoSave": "afterDelay"
 }
