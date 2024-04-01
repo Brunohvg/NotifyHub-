@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "nuvemshop_app",
+    "user_app",
 ]
 
 MIDDLEWARE = [

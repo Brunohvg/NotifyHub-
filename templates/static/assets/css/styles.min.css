@@ -6198,9 +6198,9 @@ fieldset:disabled .btn {
     --bs-card-subtitle-color: #111c2d;
     --bs-card-border-width: 0px;
     --bs-card-border-color: var(--bs-border-color-translucent);
-    --bs-card-border-radius: 0.625rem;
+    --bs-card-border-radius: 1.125rem;
     --bs-card-box-shadow: 0px 2px 6px rgba(37, 83, 185, 0.1);
-    --bs-card-inner-border-radius: calc(0.625rem - 0px);
+    --bs-card-inner-border-radius: calc(1.125rem - 0px);
     --bs-card-cap-padding-y: 15px;
     --bs-card-cap-padding-x: 30px;
     --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
