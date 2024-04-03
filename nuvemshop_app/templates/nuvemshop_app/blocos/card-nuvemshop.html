@@ -1,4 +1,7 @@
 <div class="col-md-4">
+  {% if user.is_authenticated %}
+    {{ request.user.email }}
+  {% endif %}
   <div class="card">
     <div class="card-header position-relative">
       <!-- Adicione position-relative -->

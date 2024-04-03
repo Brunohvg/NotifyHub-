@@ -13,6 +13,7 @@
     <!-- Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
       <!-- Sidebar Start -->
+
       <aside class="left-sidebar">
         <!-- Sidebar scroll -->
         <div class="scroll-sidebar" data-simplebar>
@@ -35,14 +36,14 @@
                   <span class="hide-menu ms-2 ps-1">Dashboard</span>
                 </a>
               </li>
-              <!-- Main wrapper
+              <!--                   Main wrapper
               <li class="nav-small-cap">
                 <i class="ti ti-dots nav-small-cap-icon fs-5"></i>
                 <span class="hide-menu">UI Componenst</span>
               </li>
-               -->
+                                 -->
               <li class="sidebar-item">
-                <a class="sidebar-link sidebar-link warning-hover-bg" href="{% url "nuvemshop_app:integracao" %}" aria-expanded="false">
+                <a class="sidebar-link sidebar-link warning-hover-bg" href="{% url 'nuvemshop_app:integracao' %}" aria-expanded="false">
                   <span class="aside-icon p-2 bg-light-warning rounded-3"><i class="ti ti-article fs-7 text-warning"></i></span>
                   <span class="hide-menu ms-2 ps-1">Notificações</span>
                 </a>
@@ -66,7 +67,7 @@
                 </a>
               </li>
               <li class="sidebar-item">
-                <a class="sidebar-link sidebar-link indigo-hover-bg" href="{% url "nuvemshop_app:integracao" %}" aria-expanded="false">
+                <a class="sidebar-link sidebar-link indigo-hover-bg" href="{% url 'nuvemshop_app:integracao' %}" aria-expanded="false">
                   <span class="aside-icon p-2 bg-light-indigo rounded-3"><i class="ti ti-puzzle fs-7 text-indigo"></i></span>
                   <span class="hide-menu ms-2 ps-1">Integração</span>
                 </a>
@@ -223,8 +224,3 @@
     <script src="{% static 'assets/js/dashboard.js' %}"></script>
   </body>
 </html>
-
-
-
-
-

@@ -9,13 +9,25 @@ from django.core.cache import cache
 
 
 # Create your views here.
-def login(request):
-
+def authenticacao(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        print(username, password)
-        auth = authenticate(request, username=username, password=password)
-        print(auth)
-        messages.error(request, auth)
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+
+            return redirect("nuvemshop_app:integracao")
+        messages.success(
+            request,
+            "Usuario ou senha invalido",
+        )
+
     return render(request, "user_app/login.html")
+
+
+def deslogar(request):
+    logout(request)
+    return redirect("user_app:authenticacao")
