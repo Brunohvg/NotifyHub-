@@ -13,7 +13,7 @@ def login(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-
+        messages.success(request, {username})
         print(username, password)
 
     return render(request, "user_app/login.html")
