@@ -10,10 +10,12 @@ from django.core.cache import cache
 
 # Create your views here.
 def login(request):
+
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        messages.success(request, {username})
         print(username, password)
-
+        auth = authenticate(request, username=username, password=password)
+        print(auth)
+        messages.error(request, auth)
     return render(request, "user_app/login.html")
