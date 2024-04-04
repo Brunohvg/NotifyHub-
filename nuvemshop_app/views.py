@@ -44,25 +44,21 @@ def loja_integrada(request, acess_token, user_id):
 
     if id:
         # Verificar se a loja já existe no banco de dados
-        if LojaIntegrada.objects.filter(id=id).exists():
-            # Se a loja já existe, buscar a instância existente e renderizar o template
-            loja_existente = LojaIntegrada.objects.get(id=id)
+        loja_existente = LojaIntegrada.objects.filter(id=id).first()
 
-            return render(
-                request,
-                "user_app/login.html",
-            )
+        if loja_existente:
+            # Se a loja já existe, renderizar o template com a instância existente
+            return render(request, "dashboard_app/index.html")
 
         else:
-
             # Se a loja não existe, criar uma nova instância no banco de dados
             nova_loja = LojaIntegrada.objects.create(
                 id=id,
-                nome=lj_integrada["nome"],
-                whatsapp_phone_number=lj_integrada["whatsapp_phone_number"],
-                contact_email=lj_integrada["contact_email"],
-                email=lj_integrada["email"],
-                doc=lj_integrada["doc"],
+                nome=lj_integrada.get("nome"),
+                whatsapp_phone_number=lj_integrada.get("whatsapp_phone_number"),
+                contact_email=lj_integrada.get("contact_email"),
+                email=lj_integrada.get("email"),
+                doc=lj_integrada.get("doc"),
                 autorization_token=acess_token,
                 usuario=usuario,
             )

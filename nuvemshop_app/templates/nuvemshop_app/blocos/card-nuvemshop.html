@@ -17,7 +17,7 @@
       <p class="card-text">Você tem loja na Nuvemshop?</p>
       <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">
         {% if request.user.loja.usuario_id == request.user.id %}
-          Desconectar
+        <a href="{% url "dashboard_app:dashboard" %}" class="btn btn-primary">Deslogar
         {% else %}
           Conectar
         {% endif %}

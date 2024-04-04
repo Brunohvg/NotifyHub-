@@ -6,4 +6,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("nuvemshop_app.urls")),
     path("", include("user_app.urls")),
+    path("", include("dashboard_app.urls")),
 ]
