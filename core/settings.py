@@ -4,6 +4,7 @@ from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+# APPEND_SLASH = False
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,6 +24,7 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
+CORS_ALLOW_ALL_ORIGINS = True
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -33,6 +35,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "nuvemshop_app",
     "user_app",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [

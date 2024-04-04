@@ -6,9 +6,13 @@ from django.views.decorators.http import require_POST
 
 from django.contrib.auth.signals import user_logged_out
 from django.core.cache import cache
+from .models import Usuario
+
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
+@csrf_exempt
 def authenticacao(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -28,6 +32,7 @@ def authenticacao(request):
     return render(request, "user_app/login.html")
 
 
+@csrf_exempt
 def cadastrar_usuario(request):
     if request.method == "GET":
         return render(request, "user_app/registrar.html")
@@ -46,14 +51,22 @@ def cadastrar_usuario(request):
         nome_usuario = request.POST["nome"]
         email = request.POST["email"]
         senha = request.POST["password"]
+        whatsapp = request.POST["whatsapp"]
 
         novoUsuario = User.objects.create_user(
-            username=nome_usuario, email=email, password=senha
+            username=email, email=email, password=senha
         )
         novoUsuario.save()
-        return redirect("nuvemshop_app:integracao")
+        userperfil = Usuario.objects.create(
+            nome=nome_usuario,
+            whatsapp=whatsapp,
+            user=novoUsuario,
+        )
+        userperfil.save
+        return render(request, "nuvemshop_app/integracao.html")
 
 
+@csrf_exempt
 def deslogar(request):
     logout(request)
     return redirect("user_app:authenticacao")

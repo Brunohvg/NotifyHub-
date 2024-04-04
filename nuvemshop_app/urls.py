@@ -5,5 +5,5 @@ from .views import *
 app_name = "nuvemshop_app"
 
 urlpatterns = [
-    path("", integracao, name="integracao"),
+    path("integracao", integracao, name="integracao"),
 ]
