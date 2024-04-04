@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from .models import LojaIntegrada, Usuario
 
 
 class LojaIntegrada(models.Model):
@@ -10,7 +11,7 @@ class LojaIntegrada(models.Model):
     email = models.EmailField()
     doc = models.CharField(max_length=14)
     autorization_token = models.CharField(max_length=200)
-    usuario = models.OneToOneField(User, related_name="loja", on_delete=models.CASCADE)
+    # usuario = models.OneToOneField(User, related_name="loja", on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.nome
