@@ -6355,7 +6355,12 @@ fieldset:disabled .btn {
 .card-group>.card {
     margin-bottom: var(--bs-card-group-margin)
 }
-
+@media (min-width: 460px) {
+    .card {
+      min-width: 460px;
+    }
+  }
+  
 @media (min-width:576px) {
     .card-group {
         display: -webkit-box;

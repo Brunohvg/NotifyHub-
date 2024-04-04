@@ -6143,9 +6143,9 @@ fieldset:disabled .btn {
     --bs-card-subtitle-color: #2A3547;
     --bs-card-border-width: 0px;
     --bs-card-border-color: #ebf1f6;
-    --bs-card-border-radius: 7px;
+    --bs-card-border-radius: 1.125rem;
     --bs-card-box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
-    --bs-card-inner-border-radius: 7px;
+    --bs-card-inner-border-radius: calc(1.125rem - 0px);
     --bs-card-cap-padding-y: 15px;
     --bs-card-cap-padding-x: 30px;
     --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
@@ -6154,7 +6154,7 @@ fieldset:disabled .btn {
     --bs-card-color: ;
     --bs-card-bg: var(--bs-body-bg);
     --bs-card-img-overlay-padding: 1rem;
-    --bs-card-group-margin: 12px;
+    --bs-card-group-margin: 0.75rem;
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;

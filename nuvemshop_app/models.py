@@ -1,20 +1,19 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User
 
 
 class LojaIntegrada(models.Model):
-    id = models.CharField(max_length=20, primary_key=True) # ID único da Loja Integrada
+    id = models.CharField(max_length=20, primary_key=True)  # ID único da Loja Integrada
     nome = models.CharField(max_length=100)
     whatsapp_phone_number = models.CharField(max_length=20)
     contact_email = models.EmailField()
     email = models.EmailField()
     doc = models.CharField(max_length=14)
     autorization_token = models.CharField(max_length=200)
+    usuario = models.OneToOneField(User, related_name="loja", on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.nome
-
 
 
 """class Cliente(models.Model):

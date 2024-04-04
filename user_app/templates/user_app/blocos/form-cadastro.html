@@ -1,19 +1,24 @@
-<form>
+<form action="" method="POST" autocomplete="off">
+  {% csrf_token %}
   <div class="mb-3">
-    <label for="exampleInputtext1" class="form-label">Name</label>
-    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" />
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" aria-describedby="nomeHelp" name="nome" required />
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email Address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    <label for="whatsapp" class="form-label">WhatsApp</label>
+    <input type="tel" class="form-control" id="whatsapp" aria-describedby="whatsappHelp" name="whatsapp" required />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required />
   </div>
   <div class="mb-4">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" />
+    <label for="password" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="password" name="password" required />
   </div>
-  <a href="./index.html" class="btn btn-primary w-100 fs-4 mb-4">Sign Up</a>
+  <button type="submit" class="btn btn-primary w-100 fs-4 mb-4">Registrar</button>
   <div class="d-flex align-items-center justify-content-center">
-    <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
-    <a class="text-primary fw-bold ms-2" href="./authentication-login.html">Sign In</a>
+    <p class="fs-4 mb-0 fw-bold">Já tem uma conta?</p>
+    <a class="text-primary fw-bold ms-2" href="{% url 'user_app:authenticacao' %}">Entrar</a>
   </div>
 </form>
