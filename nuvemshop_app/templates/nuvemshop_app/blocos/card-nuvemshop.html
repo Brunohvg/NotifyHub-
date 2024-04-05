@@ -1,6 +1,6 @@
 <div class="col-md-4">
   {% if user.is_authenticated %}
-    {{ request.user.loja.doc }}
+    {{ request.user.loja.nome }}
   {% endif %}
   <div class="card">
     <div class="card-header position-relative">
@@ -15,13 +15,7 @@
     <div class="card-body">
       <h5 class="card-title">Configuração Nuvemshop</h5>
       <p class="card-text">Você tem loja na Nuvemshop?</p>
-      <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">
-        {% if request.user.loja.usuario_id == request.user.id %}
-        <a href="{% url "dashboard_app:dashboard" %}" class="btn btn-primary">Deslogar
-        {% else %}
-          Conectar
-        {% endif %}
-      </a>
+      <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">Conectar</a>
     </div>
   </div>
 </div>

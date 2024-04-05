@@ -2,6 +2,9 @@
 
 {% block TituloConteudoFluido %}
   <h5 class="card-title fw-semibold mb-4">Central de Integrações</h5>
+  {% for messages in messages %}
+    <div class="alert alert-success" role="alert">{{ messages }}</div>
+  {% endfor %}
 {% endblock %}
 
 {% block ConteudoFluido %}
