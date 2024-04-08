@@ -26,6 +26,11 @@ ALLOWED_HOSTS = [
 # Application definition
 CORS_ALLOW_ALL_ORIGINS = True
 
+LOGIN_URL = "user_app:authenticacao"
+"""LOGIN_REDIRECT_URL = (
+    "user_app:authenticacao"  # Substitua 'FreteApp:base' pela sua URL desejada
+)"""
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

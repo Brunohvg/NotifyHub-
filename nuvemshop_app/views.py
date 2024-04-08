@@ -8,11 +8,6 @@ nuvemshop = NuvemShop()
 PARAMETRO_CODE = "code"
 
 
-"""def integracao(request):
-    url = "https://www.tiendanube.com/apps/8619/authorize?state=csrf-code"
-    return redirect(url)"""
-
-
 @login_required
 def integracao(request):
     """
@@ -49,6 +44,7 @@ def autorizar(request, code):
     return render(request, "nuvemshop_app/integracao.html", {"autorizado": autorizado})
 
 
+@login_required
 def loja_integrada(request, access_token, user_id):
     """
     Função para lidar com a integração de uma loja NuvemShop.
@@ -77,3 +73,9 @@ def loja_integrada(request, access_token, user_id):
             "nuvemshop_app/integracao.html",
             {"lj_integrada": lj_integrada, "nova_loja": nova_loja},
         )
+
+
+def get_clientes(request):
+
+    usuario = request.user
+    print("usuario")

@@ -86,11 +86,9 @@ class NuvemShop:
         return None
 
 
-"""
 nuvem_shop = NuvemShop()
 print(
     nuvem_shop._get_clientes(
-        code="39bdde67df2a468e42cd7c264a49173fa1375339", store_id="2686287"
+        code="7d2c3a149a7aec3ab4e7f110cf27846dd13aca01", store_id="2685706"
     )
 )
-"""
