@@ -44,16 +44,14 @@ def autorizar(request, code):
     return render(request, "nuvemshop_app/integracao.html", {"autorizado": autorizado})
 
 
-@login_required
+"""@login_required
 def loja_integrada(request, access_token, user_id):
-    """
-    Função para lidar com a integração de uma loja NuvemShop.
-    """
+ 
     usuario = request.user
     lj_integrada = nuvemshop.store_nuvem(code=access_token, store_id=user_id)
     id = lj_integrada.get("id")
 
-    loja_existente = LojaIntegrada.objects.filter(id=id).first()
+    loja_existente = LojaIntegrada.objects.filter(id=id, ativa=False).first()
 
     if loja_existente:
         return messages.error(request, "Está loja já esta em uso com outro email")
@@ -73,9 +71,65 @@ def loja_integrada(request, access_token, user_id):
             "nuvemshop_app/integracao.html",
             {"lj_integrada": lj_integrada, "nova_loja": nova_loja},
         )
+"""
 
 
-def get_clientes(request):
-
+@login_required
+def loja_integrada(request, access_token, user_id):
+    """
+    Função para lidar com a integração de uma loja NuvemShop.
+    """
     usuario = request.user
-    print("usuario")
+    lj_integrada = nuvemshop.store_nuvem(code=access_token, store_id=user_id)
+    id = lj_integrada.get("id")
+
+    loja_existente = LojaIntegrada.objects.filter(id=id).first()
+
+    if loja_existente:
+        if loja_existente.ativa == True:
+            messages.error(request, "Esta loja já está integrada")
+        else:
+            # Integrar a loja
+            nova_loja = LojaIntegrada.objects.create(
+                id=id,
+                nome=lj_integrada.get("nome"),
+                whatsapp_phone_number=lj_integrada.get("whatsapp_phone_number"),
+                contact_email=lj_integrada.get("contact_email"),
+                email=lj_integrada.get("email"),
+                doc=lj_integrada.get("doc"),
+                autorization_token=access_token,
+                usuario=usuario,
+            )
+            messages.success(request, "Loja integrada com sucesso")
+    else:
+        # Integrar a loja
+        nova_loja = LojaIntegrada.objects.create(
+            id=id,
+            nome=lj_integrada.get("nome"),
+            whatsapp_phone_number=lj_integrada.get("whatsapp_phone_number"),
+            contact_email=lj_integrada.get("contact_email"),
+            email=lj_integrada.get("email"),
+            doc=lj_integrada.get("doc"),
+            autorization_token=access_token,
+            usuario=usuario,
+        )
+        messages.success(request, "Loja integrada com sucesso")
+
+    return render(
+        request,
+        "nuvemshop_app/integracao.html",
+        {"lj_integrada": lj_integrada, "nova_loja": nova_loja},
+    )
+
+
+def desativar_integracao(request):
+    if request.method == "GET":
+        LojaIntegrada.objects.filter(id=request.user.loja.id).update(ativa=False)
+        return render(
+            request,
+            "nuvemshop_app/integracao.html",
+        )
+    return render(
+        request,
+        "nuvemshop_app/integracao.html",
+    )

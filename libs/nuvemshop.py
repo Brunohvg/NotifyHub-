@@ -89,6 +89,6 @@ class NuvemShop:
 nuvem_shop = NuvemShop()
 print(
     nuvem_shop._get_clientes(
-        code="7d2c3a149a7aec3ab4e7f110cf27846dd13aca01", store_id="2685706"
+        code=" b5d95086a6a48ff8e58e20487fdd39b044bb339b ", store_id="2685706"
     )
 )

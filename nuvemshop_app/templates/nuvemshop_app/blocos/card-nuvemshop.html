@@ -1,21 +1,26 @@
 <div class="col-md-4">
-  {% if user.is_authenticated %}
-    {{ request.user.loja.nome }}
-  {% endif %}
   <div class="card">
     <div class="card-header position-relative">
-      <!-- Adicione position-relative -->
-      <!-- Sinalizador de confirmação -->
       <div class="position-absolute top--2 end-0">
-        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
-          <i class="ti ti-check"></i>
-        </div>
+        {% if user.is_authenticated %}
+          {% if user.loja.ativa == True %}
+            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+              <i class="ti ti-check"></i>
+            </div>
+          {% endif %}
+        {% endif %}
       </div>NuvemShop
     </div>
     <div class="card-body">
       <h5 class="card-title">Configuração Nuvemshop</h5>
       <p class="card-text">Você tem loja na Nuvemshop?</p>
-      <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">Conectar</a>
+      {% if user.is_authenticated %}
+        {% if user.loja.ativa == True %}
+          <a href="{% url 'nuvemshop_app:desativar_integracao' %}" class="btn btn-primary">Disconnect</a>
+        {% else %}
+          <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">Connect</a>
+        {% endif %}
+      {% endif %}
     </div>
   </div>
 </div>
