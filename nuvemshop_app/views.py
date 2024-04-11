@@ -114,22 +114,12 @@ def loja_integrada(request, access_token, user_id):
             usuario=usuario,
         )
         messages.success(request, "Loja integrada com sucesso")
-
-    return render(
-        request,
-        "nuvemshop_app/integracao.html",
-        {"lj_integrada": lj_integrada, "nova_loja": nova_loja},
-    )
+    return redirect("nuvemshop_app:integracao")
 
 
 def desativar_integracao(request):
     if request.method == "GET":
-        LojaIntegrada.objects.filter(id=request.user.loja.id).update(ativa=False)
-        return render(
-            request,
-            "nuvemshop_app/integracao.html",
-        )
-    return render(
-        request,
-        "nuvemshop_app/integracao.html",
-    )
+
+        LojaIntegrada.objects.filter(id=request.user.loja.id).delete()
+        messages.info(request, "Sua loja foi desistalada com sucesso")
+        return redirect("nuvemshop_app:integracao")
