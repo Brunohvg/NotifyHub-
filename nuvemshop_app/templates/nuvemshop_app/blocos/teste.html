@@ -1,126 +1,27 @@
-<div class="MuiCardContent-root css-1h3am5o" bis_skin_checked="1">
-  <div class="MuiStack-root css-1vfxu98" bis_skin_checked="1">
-    <div class="MuiBox-root css-0" bis_skin_checked="1">
-      <h5 class="MuiTypography-root MuiTypography-h5 css-1tdwaqj">Top Paying Clients</h5>
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-header position-relative">
+      <div class="position-absolute top--2 end-0">
+        <input type="text">
+        {% if user.is_authenticated %}
+          {% if user.loja %}
+            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+              <i class="ti ti-check"></i>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>NuvemShop
     </div>
-  </div>
-  <div class="MuiBox-root css-1v8x7dw" bis_skin_checked="1">
-    <div class="MuiBox-root css-1gk6p0h" bis_skin_checked="1">
-      <table class="MuiTable-root css-1mzrom7">
-        <thead class="MuiTableHead-root css-1wbz3t9">
-          <tr class="MuiTableRow-root MuiTableRow-head css-4nycf">
-            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18riplo" scope="col">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Id</h6>
-            </th>
-            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18riplo" scope="col">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Assigned</h6>
-            </th>
-            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18riplo" scope="col">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Name</h6>
-            </th>
-            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18riplo" scope="col">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Priority</h6>
-            </th>
-            <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignRight MuiTableCell-sizeMedium css-kr0azc" scope="col">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Budget</h6>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="MuiTableBody-root css-1xnox0e">
-          <tr class="MuiTableRow-root css-4nycf">
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <p class="MuiTypography-root MuiTypography-body1 css-1nj3vj8">1</p>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiBox-root css-70qvj9" bis_skin_checked="1">
-                <div class="MuiBox-root css-0" bis_skin_checked="1">
-                  <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Sunil Joshi</h6><p class="MuiTypography-root MuiTypography-body1 css-1tr3qqn">Web Designer</p>
-                </div>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-1m86f3f">Elite Admin</h6>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-gty074" bis_skin_checked="1">
-                <span class="MuiChip-label MuiChip-labelSmall css-1pjtbja">Low</span>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-8pmkcr">
-              <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!--  -->3.9<!--  -->k</h6>
-            </td>
-          </tr>
-          <tr class="MuiTableRow-root css-4nycf">
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <p class="MuiTypography-root MuiTypography-body1 css-1nj3vj8">2</p>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiBox-root css-70qvj9" bis_skin_checked="1">
-                <div class="MuiBox-root css-0" bis_skin_checked="1">
-                  <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Andrew McDownland</h6><p class="MuiTypography-root MuiTypography-body1 css-1tr3qqn">Project Manager</p>
-                </div>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-1m86f3f">Real Homes WP Theme</h6>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-15jn031" bis_skin_checked="1">
-                <span class="MuiChip-label MuiChip-labelSmall css-1pjtbja">Medium</span>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-8pmkcr">
-              <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!--  -->24.5<!--  -->k</h6>
-            </td>
-          </tr>
-          <tr class="MuiTableRow-root css-4nycf">
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <p class="MuiTypography-root MuiTypography-body1 css-1nj3vj8">3</p>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiBox-root css-70qvj9" bis_skin_checked="1">
-                <div class="MuiBox-root css-0" bis_skin_checked="1">
-                  <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Christopher Jamil</h6><p class="MuiTypography-root MuiTypography-body1 css-1tr3qqn">Project Manager</p>
-                </div>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-1m86f3f">MedicalPro WP Theme</h6>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1x8i1zm" bis_skin_checked="1">
-                <span class="MuiChip-label MuiChip-labelSmall css-1pjtbja">High</span>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-8pmkcr">
-              <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!--  -->12.8<!--  -->k</h6>
-            </td>
-          </tr>
-          <tr class="MuiTableRow-root css-4nycf">
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <p class="MuiTypography-root MuiTypography-body1 css-1nj3vj8">4</p>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiBox-root css-70qvj9" bis_skin_checked="1">
-                <div class="MuiBox-root css-0" bis_skin_checked="1">
-                  <h6 class="MuiTypography-root MuiTypography-subtitle2 css-143bqbo">Nirav Joshi</h6><p class="MuiTypography-root MuiTypography-body1 css-1tr3qqn">Frontend Engineer</p>
-                </div>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <h6 class="MuiTypography-root MuiTypography-subtitle2 css-1m86f3f">Hosting Press HTML</h6>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-ugdfay">
-              <div class="MuiChip-root MuiChip-filled MuiChip-sizeSmall MuiChip-colorDefault MuiChip-filledDefault css-1woeyt0" bis_skin_checked="1">
-                <span class="MuiChip-label MuiChip-labelSmall css-1pjtbja">Critical</span>
-              </div>
-            </td>
-            <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight MuiTableCell-sizeMedium css-8pmkcr">
-              <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!--  -->2.4<!--  -->k</h6>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card-body">
+      <h5 class="card-title">Configuração Nuvemshop</h5>
+      <p class="card-text">Você tem loja na Nuvemshop?</p>
+      {% if user.is_authenticated %}
+        {% if user.loja %}
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Remover</button>
+        {% else %}
+          <a href="https://www.tiendanube.com/apps/8619/authorize?state=csrf-code" class="btn btn-primary">Conectar</a>
+        {% endif %}
+      {% endif %}
     </div>
   </div>
 </div>

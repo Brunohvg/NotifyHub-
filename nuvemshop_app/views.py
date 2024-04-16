@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import LojaIntegrada
 from libs.nuvemshop import NuvemShop
@@ -6,6 +6,28 @@ from django.contrib import messages
 
 nuvemshop = NuvemShop()
 PARAMETRO_CODE = "code"
+
+
+def ocultar_email(email):
+    # Dividir o email em duas partes: o nome de usuário e o domínio
+    usuario, dominio = email.split("@")
+
+    # Determinar o número de caracteres a serem ocultados
+    num_ocultar = len(usuario) // 2
+
+    # Substituir os caracteres do nome de usuário por asteriscos
+    usuario_oculto = "*" * num_ocultar + usuario[num_ocultar:]
+
+    # Retornar o email oculto
+    return usuario_oculto + "@" + dominio
+
+
+"""# Exemplo de uso:
+email = "exemplo@email.com"
+email_oculto = ocultar_email(email)
+print(email_oculto)  # Saída: ex*****@email.com
+
+"""
 
 
 @login_required
@@ -33,9 +55,9 @@ def autorizar(request, code):
     user_id = autorizado.get("user_id")
     id_existe = LojaIntegrada.objects.filter(id=user_id).first()
     if id_existe is not None:
-        messages.error(
-            request, f"Esta loja já está em uso com outro email {id_existe.email}"
-        )
+        email = ocultar_email(email=id_existe.usuario.email)
+
+        messages.error(request, f"Esta loja já está em uso com outro email {email}")
         return redirect("nuvemshop_app:integracao")
 
     if access_token and user_id:
@@ -118,8 +140,13 @@ def loja_integrada(request, access_token, user_id):
 
 
 def desativar_integracao(request):
-    if request.method == "GET":
+    loja = get_object_or_404(LojaIntegrada, id=request.user.loja.id)
 
-        LojaIntegrada.objects.filter(id=request.user.loja.id).delete()
-        messages.info(request, "Sua loja foi desistalada com sucesso")
-        return redirect("nuvemshop_app:integracao")
+    # Verifica se o ID da loja na URL corresponde ao ID da loja do usuário
+    if int(loja.id) == int(request.user.loja.id):
+        loja.delete()
+        messages.info(request, "Sua loja foi desinstalada com sucesso")
+    else:
+        messages.error(request, "Você não tem permissão para desinstalar esta loja")
+
+    return redirect("nuvemshop_app:integracao")
