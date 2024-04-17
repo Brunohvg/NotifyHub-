@@ -25,7 +25,7 @@
     --bs-gray: #707a82;
     --bs-gray-dark: #343a40;
     --bs-gray-100: #e7ecf0;
-    --bs-gray-200: #f5f8fb;
+    --bs-gray-200: #F5F6FA ;
     --bs-gray-300: #e6ecf1;
     --bs-gray-400: #fbfcfd;
     --bs-gray-500: #adb5bd;
@@ -89,7 +89,7 @@
     --bs-info-border-subtle: #b5eaf7;
     --bs-warning-border-subtle: #fce6c8;
     --bs-danger-border-subtle: #fdd5cb;
-    --bs-light-border-subtle: #f5f8fb;
+    --bs-light-border-subtle: #F5F6FA;
     --bs-dark-border-subtle: #adb5bd;
     --bs-white-rgb: 255, 255, 255;
     --bs-black-rgb: 0, 0, 0;
@@ -108,7 +108,7 @@
     --bs-emphasis-color-rgb: 0, 0, 0;
     --bs-secondary-color: rgba(112, 122, 130, 0.75);
     --bs-secondary-color-rgb: 112, 122, 130;
-    --bs-secondary-bg: #f5f8fb;
+    --bs-secondary-bg: #F5F6FA;
     --bs-secondary-bg-rgb: 245, 248, 251;
     --bs-tertiary-color: rgba(112, 122, 130, 0.5);
     --bs-tertiary-color-rgb: 112, 122, 130;
@@ -2735,7 +2735,7 @@ progress {
     --bs-table-border-color: var(--bs-border-color);
     --bs-table-accent-bg: transparent;
     --bs-table-striped-color: #111c2d;
-    --bs-table-striped-bg: #f5f8fb;
+    --bs-table-striped-bg: #F5F6FA;
     --bs-table-active-color: #111c2d;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
     --bs-table-hover-color: #111c2d;
@@ -3816,7 +3816,7 @@ textarea.form-control-lg {
     color: var(--bs-body-color);
     text-align: center;
     white-space: nowrap;
-    background-color: #f5f8fb;
+    background-color: #F5F6FA;
     border: var(--bs-border-width) solid #e7ecf0;
     border-radius: 0.5rem
 }
@@ -20742,7 +20742,7 @@ fieldset:disabled .btn {
     position: relative;
     z-index: 50;
     width: 100%;
-    background: #f5f8fb
+    background: #F5F6FA; 
 }
 
 .app-header .navbar {
@@ -20809,7 +20809,7 @@ fieldset:disabled .btn {
 .body-wrapper {
     position: relative;
     min-height: 100vh;
-    background-color: #f5f8fb
+    background-color: #F5F6FA 
 }
 
 .body-wrapper>.container-fluid,
