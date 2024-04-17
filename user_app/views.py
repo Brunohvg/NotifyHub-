@@ -70,3 +70,18 @@ def cadastrar_usuario(request):
 def deslogar(request):
     logout(request)
     return redirect("user_app:authenticacao")
+
+
+def perfil(request):
+    if request.method == "POST":
+        nome = request.POST.get("inputNome")
+        telefone = request.POST.get("inputTelefone")
+        if nome and telefone:
+            return atualizar_usuario(request, nome, telefone)
+
+    return render(request, "user_app/blocos/perfil.html")
+
+
+def atualizar_usuario(request, nome, telefone):
+    # TODO 
+    ...
