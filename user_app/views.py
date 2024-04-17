@@ -78,9 +78,10 @@ def perfil(request):
         telefone = request.POST.get("inputTelefone")
         if nome and telefone:
             return atualizar_usuario(request, nome, telefone)
-        
 
     return render(request, "user_app/blocos/perfil.html")
 
 
-def atualizar_usuario(request, nome, telefone): ...
+def atualizar_usuario(request, nome, telefone):
+    # TODO teste
+    ...
